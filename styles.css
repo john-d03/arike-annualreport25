@@ -396,6 +396,13 @@ ul.clean li::before {
   letter-spacing: -0.02em;
   color: var(--terracotta);
   display: block;
+  white-space: nowrap;
+}
+.stat .num small {
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-left: 1.5pt;
 }
 .stat .label {
   font-family: var(--sans);
@@ -412,6 +419,22 @@ ul.clean li::before {
   gap: 6mm;
   margin: 10pt 0 14pt 0;
 }
+
+/* Opening statement (inside cover) */
+.page-inner.statement { display: flex; flex-direction: column; }
+.statement .statement-body { flex: 0 0 auto; }
+.numbers-band {
+  margin-top: auto;
+  padding-top: 14pt;
+  border-top: 1px solid var(--rule);
+}
+.numbers-band .eyebrow { margin-bottom: 12pt; }
+.numbers-band .stat-row { margin: 0; }
+.numbers-band .stat-row + .stat-row { margin-top: 9mm; }
+.numbers-band .stat { border-top: none; padding-top: 0; }
+.numbers-band .stat .num { font-size: 29pt; }
+.numbers-band .stat .num small { font-size: 14pt; font-weight: 500; margin-left: 1pt; }
+.numbers-band .stat .label { font-size: 8pt; margin-top: 5pt; }
 
 /* Tables */
 table.report {
