@@ -481,6 +481,7 @@ figure figcaption {
 
 /* Full-bleed photo page */
 .photo-page { padding: 0; background: var(--ink); }
+.photo-page .bleed { object-fit: cover; object-position: 62% center; }
 .photo-page .caption-strip {
   position: absolute;
   left: 0; right: 0; bottom: 0;

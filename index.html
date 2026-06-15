@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Arike Home Care - Annual Report 2025</title>
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
 
@@ -625,13 +625,11 @@
   <div class="page-inner">
     <p class="eyebrow">III · Impact</p>
     <h2 class="section-title">Doctor's <em>home care.</em></h2>
-    <div class="grid-2">
+    <div class="grid-2" style="align-items: start;">
       <div>
         <p class="lede">For patients who are elderly, bed-bound, chronically ill, or approaching end of life, repeated hospital visits are physically exhausting, emotionally distressing, and financially burdensome.</p>
         <p>Arike's doctor-led home care model was developed to respond to these realities - ensuring that medical decision-making, symptom control, and clinical guidance are available where patients live, rather than being confined to institutional settings.</p>
         <p>Doctors also act as clinical coordinators, ensuring continuity between home-based care, hospital services, and community resources when escalation or referral is required.</p>
-      </div>
-      <div>
         <h4 class="sub">Key outcomes</h4>
         <ul class="clean">
           <li><strong>Timely clinical intervention</strong> - assessment and treatment for pain, infections, breathlessness, and other distressing symptoms within the home.</li>
@@ -639,15 +637,15 @@
           <li><strong>Comfort-centred care</strong> - treatment in familiar surroundings, promoting emotional well-being and dignity.</li>
           <li><strong>Guidance for caregivers</strong> - practical instructions and reassurance for complex situations at home.</li>
         </ul>
-        <div class="stat" style="margin-top: 18pt;">
+        <div class="stat" style="margin-top: 16pt;">
           <span class="num">1,160</span>
           <span class="label">Doctor home visits in 2025</span>
         </div>
       </div>
+      <figure class="photo-frame" style="height: 150mm;">
+        <img src="images/final/f48.jpeg" alt="Home-based palliative care visit to a patient" />
+      </figure>
     </div>
-    <figure style="margin-top: 14pt; height: 90mm;" class="photo-frame">
-      <img src="images/final/f48.jpeg" alt="Home-based palliative care visit to a patient" />
-    </figure>
   </div>
   <div class="folio"><span>Doctor's Home Care</span><span class="num">24</span></div>
 </section>
@@ -693,7 +691,10 @@
     <p class="eyebrow">III · Impact</p>
     <h2 class="section-title">Physiotherapy &amp; <em>functional support.</em></h2>
     <p class="lede">Arike's physiotherapy services focus on enabling comfort, mobility, and functional independence for as long as possible within the home setting.</p>
-    <div class="grid-2" style="margin-top: 10pt;">
+    <figure class="photo-frame" style="height: 82mm; margin-top: 14pt;">
+      <img src="images/final/f47.jpeg" alt="Arike multidisciplinary care team engagement" />
+    </figure>
+    <div class="grid-2" style="margin-top: 16pt; align-items: start;">
       <div>
         <h4 class="sub">Interventions</h4>
         <ul class="clean">
@@ -704,14 +705,11 @@
           <li>Breathing exercises for patients with respiratory distress</li>
           <li>Functional training for transfers and daily activities</li>
         </ul>
-        <div class="stat" style="margin-top: 18pt;">
-          <span class="num">1,032</span>
-          <span class="label">Physiotherapy sessions in 2025</span>
-        </div>
       </div>
-      <figure class="photo-frame" style="height: 130mm;">
-        <img src="images/final/f47.jpeg" alt="Arike multidisciplinary care team engagement" />
-      </figure>
+      <div class="stat">
+        <span class="num">1,032</span>
+        <span class="label">Physiotherapy sessions in 2025</span>
+      </div>
     </div>
   </div>
   <div class="folio"><span>Physiotherapy</span><span class="num">26</span></div>
@@ -1722,8 +1720,9 @@
   toggle();
 })();
 
-// Fit each photo-frame to its image's true aspect ratio: no crop, no letterbox
-// bars. Bounded by the frame's original height so no page can overflow.
+// Photo layout: landscape -> edge-to-edge across its slot (margins like text);
+// portrait feature (wide slot) -> half the page, pinned to a side; portrait in a
+// grid cell -> fit within the cell. Never crops; never overflows the page.
 (function () {
   function fit(fr) {
     var img = fr.querySelector('img');
@@ -1736,19 +1735,38 @@
     var slotW = parseFloat(fr.dataset.slotW);
     var capH = parseFloat(fr.dataset.capH);
     if (!slotW || !capH) return;
-    var w, h;
-    if (slotW / capH > ar) { h = capH; w = capH * ar; } // portrait: cap height
-    else { w = slotW; h = slotW / ar; }                  // landscape: full width
+    var inner = fr.closest('.page-inner');
+    var contentW = inner ? inner.clientWidth : slotW;
+    var wide = slotW > 0.7 * contentW;   // occupies (almost) the full text width
+    var w, h, align;
+    if (ar >= 1) {
+      // landscape: fill the slot edge to edge
+      w = slotW; h = w / ar;
+      if (h > capH) { h = capH; w = h * ar; }
+      align = 'left';
+    } else if (wide) {
+      // portrait feature image: take half the page, on a side
+      w = contentW / 2 - 4;
+      h = w / ar;
+      align = (parseInt(fr.dataset.pi || '0', 10) % 2) ? 'right' : 'left';
+    } else {
+      // portrait already inside a grid cell: fit within the cell
+      w = slotW; h = w / ar;
+      if (h > capH) { h = capH; w = h * ar; }
+      align = 'center';
+    }
     fr.style.width = Math.round(w) + 'px';
     fr.style.height = Math.round(h) + 'px';
-    fr.style.marginLeft = 'auto';
-    fr.style.marginRight = 'auto';
     fr.style.background = 'transparent';
+    if (align === 'left') { fr.style.marginLeft = '0'; fr.style.marginRight = 'auto'; }
+    else if (align === 'right') { fr.style.marginLeft = 'auto'; fr.style.marginRight = '0'; }
+    else { fr.style.marginLeft = 'auto'; fr.style.marginRight = 'auto'; }
   }
   function fitAll() {
-    document.querySelectorAll('.photo-frame').forEach(function (fr) {
+    document.querySelectorAll('.photo-frame').forEach(function (fr, i) {
       var img = fr.querySelector('img');
       if (!img) return;
+      fr.dataset.pi = i;
       if (img.complete && img.naturalWidth) fit(fr);
       else img.addEventListener('load', function () { fit(fr); });
     });
