@@ -4,31 +4,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Arike Home Care - Annual Report 2025</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
 
-<div class="print-bar no-print">
-  Arike · Annual Report 2025 - print to PDF (A4, margins: None, background graphics ON)
-  <button onclick="window.print()">Print / Save PDF</button>
+<div class="print-controls no-print">
+  <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  <div class="print-info">
+    <span class="print-info__icon">i</span>
+    <span>For best results, set <strong>A4</strong> size, <strong>margins: None</strong>, and <strong>background graphics: ON</strong>.</span>
+  </div>
 </div>
+
+<button class="scroll-top no-print" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top" title="Scroll to top">↑</button>
 
 <!-- ============================================================
      COVER
 ============================================================ -->
 <section class="page cover">
-  <div class="marks">
-    <span>Arike Palliative Home Care</span>
-    <span>Cochin · Kerala · India</span>
+  <div class="cover-head">
+    <img class="cover-logo" src="images/logo-arike.png" alt="Arike" />
+    <span class="cover-place">Cochin &middot; Kerala &middot; India</span>
   </div>
-  <div class="hero-photo">
-    <img src="images/web-cover.jpg" alt="Elderly Indian couple reading newspapers together at home" style="width:100%; height:100%; object-fit:cover;" />
-  </div>
-  <div class="title-block">
+
+  <div class="cover-headline">
     <div class="org">An Initiative of IMA Cochin</div>
     <div class="thin-rule"></div>
     <h1>Care, <em>quietly</em><br/>at home.</h1>
-    <span class="year">Annual Report - 2025</span>
+    <p class="cover-lede">A year spent inside other people's homes, restoring dignity and comfort to those living with serious illness, free of charge, across Ernakulam.</p>
+  </div>
+
+  <div class="cover-photo">
+    <img src="images/final/f37.jpeg" alt="Arike community gathering during the Onam celebration" />
+  </div>
+
+  <div class="cover-foot">
+    <div class="cover-stats">
+      <div><strong>4,214</strong><span>Patients &amp; families</span></div>
+      <div><strong>12,224</strong><span>Home visits</span></div>
+      <div><strong>100%</strong><span>Free of charge</span></div>
+    </div>
+    <span class="year">Annual Report 2025</span>
   </div>
 </section>
 
@@ -41,7 +57,7 @@
     <p class="lede">This report is a record of a year spent inside other people's homes -
       a year of <em>bedside visits, night calls, quiet conversations,</em> and the
       slow, steady work of restoring dignity to people living with serious illness.</p>
-    <p>Across 2025, Arike Palliative Home Care reached 4,214 patients and families
+    <p>Across 2025, Arike Home Care reached 4,214 patients and families
       across Ernakulam district. We made 12,224 home visits, answered 33,132 calls,
       drove 69,127 kilometres on electric wheels, and trained 50 social-work interns
       and 12 international nursing professionals. We did this as a free-care service -
@@ -77,10 +93,11 @@
       <div class="toc-group">II · Context &amp; Model</div>
       <div class="toc-item"><span class="label">Why Palliative Care Matters in Kerala</span><span class="dots"></span><span class="pg">12</span></div>
       <div class="toc-item"><span class="label">The Arike Model</span><span class="dots"></span><span class="pg">16</span></div>
-      <div class="toc-item"><span class="label">Milestones · 2019–2025</span><span class="dots"></span><span class="pg">20</span></div>
+      <div class="toc-item"><span class="label">Milestones · 2019-2025</span><span class="dots"></span><span class="pg">20</span></div>
 
       <div class="toc-group">III · Impact</div>
       <div class="toc-item"><span class="label">Compassion in Action - 2025 at a Glance</span><span class="dots"></span><span class="pg">22</span></div>
+      <div class="toc-item"><span class="label">Notable Impacts &amp; Estimated Economic Impact</span><span class="dots"></span><span class="pg">23</span></div>
       <div class="toc-item"><span class="label">Doctor's Home Care</span><span class="dots"></span><span class="pg">24</span></div>
       <div class="toc-item"><span class="label">Nursing Home Care</span><span class="dots"></span><span class="pg">25</span></div>
       <div class="toc-item"><span class="label">Physiotherapy &amp; Functional Support</span><span class="dots"></span><span class="pg">26</span></div>
@@ -103,10 +120,12 @@
 
       <div class="toc-group">VI · Stewardship</div>
       <div class="toc-item"><span class="label">CSR Partners &amp; Contributions</span><span class="dots"></span><span class="pg">54</span></div>
+      <div class="toc-item"><span class="label">Financial Overview - Income &amp; Expenditure</span><span class="dots"></span><span class="pg">57</span></div>
       <div class="toc-item"><span class="label">Collaborations</span><span class="dots"></span><span class="pg">58</span></div>
 
       <div class="toc-group">VII · Looking Forward</div>
       <div class="toc-item"><span class="label">Future Plans</span><span class="dots"></span><span class="pg">62</span></div>
+      <div class="toc-item"><span class="label">One Health - Neighbourhood Network for Health</span><span class="dots"></span><span class="pg">63</span></div>
       <div class="toc-item"><span class="label">Testimonials</span><span class="dots"></span><span class="pg">64</span></div>
       <div class="toc-item"><span class="label">Thank You</span><span class="dots"></span><span class="pg">66</span></div>
       <div class="toc-item"><span class="label">Donation &amp; Contact</span><span class="dots"></span><span class="pg">68</span></div>
@@ -154,23 +173,21 @@
 </section>
 
 <!-- ============================================================
-     ABOUT US (split with image)
+     ABOUT US (full-width infographic, text on top)
 ============================================================ -->
-<section class="page" style="padding:0;">
-  <div class="split">
-    <div class="img-pane">
-      <img src="images/web-about.jpg" alt="Community health camp in Kerala - elderly woman receiving care" />
+<section class="page page--cream">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
+    <p class="eyebrow">About Us</p>
+    <h2 class="section-title" style="font-size: 30pt;">A free-care service, <em>rooted in the home.</em></h2>
+    <div class="grid-2" style="gap: 10mm; margin-top: 4pt;">
+      <p>Arike Home Care is a community-rooted, professionally aligned palliative care initiative committed to restoring dignity, comfort, and quality of life for individuals experiencing health-related suffering. It delivers comprehensive, home-based care <strong>24 hours a day, 7 days a week</strong>, ensuring uninterrupted access to medical, nursing, psychosocial, and supportive services within the familiarity of patients' homes.</p>
+      <p>Services are provided <em>irrespective of a patient's financial status.</em> By integrating healthcare professionals, social workers, community volunteers and technology-enabled systems, Arike addresses physical, emotional, social and spiritual needs, reducing avoidable hospitalisation and demonstrating that compassionate, community-based care can be both clinically effective and socially sustainable.</p>
     </div>
-    <div class="content-pane">
-      <p class="eyebrow">About Us</p>
-      <h2 class="section-title" style="font-size: 30pt;">A free-care service, <em>rooted in the home.</em></h2>
-      <p>Arike Palliative Home Care is a community-rooted, professionally aligned palliative care initiative committed to restoring dignity, comfort, and quality of life for individuals experiencing health-related suffering.</p>
-      <p>Responding to the growing burden of chronic and life-limiting illness, Arike delivers comprehensive, home-based palliative care <strong>24 hours a day, 7 days a week</strong> - ensuring uninterrupted access to medical, nursing, psychosocial, and supportive services within the familiarity of patients' homes.</p>
-      <p>Services are provided <em>irrespective of a patient's financial status.</em> Families who wish to support the initiative may voluntarily contribute in cash, kind, or other forms, but care is never conditional upon payment.</p>
-      <p>By integrating healthcare professionals, social workers, community volunteers and technology-enabled systems, Arike addresses physical, emotional, social and spiritual needs - reducing avoidable hospitalisation, and demonstrating that compassionate, community-based palliative care can be both clinically effective and socially sustainable.</p>
+    <div class="infographic-full">
+      <img src="images/final/f13.jpeg" alt="The ethos of unconditional free care at Arike" />
     </div>
   </div>
-  <div class="folio" style="left:50%; right: 16mm;"><span>About Us</span><span class="num">08</span></div>
+  <div class="folio"><span>About Us</span><span class="num">08</span></div>
 </section>
 
 <!-- ============================================================
@@ -268,75 +285,50 @@
 </section>
 
 <!-- ============================================================
-     KERALA CONTEXT - page 1 of 2
+     KERALA CONTEXT - text + demographic chart (merged 12 + 12a)
 ============================================================ -->
 <section class="page">
-  <div class="page-inner">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
     <p class="eyebrow">Context</p>
-    <h2 class="section-title">A model state, <em>and a new burden.</em></h2>
-    <p class="lede">Kerala is widely recognised as a model state in India for its social development achievements. High literacy, increased life expectancy and a strong public health system have produced health indicators comparable to many developed nations. Those very successes have created new and complex challenges.</p>
-    <div class="cols-2">
-      <h4 class="sub">Demographic transition</h4>
-      <p>Kerala is experiencing a rapid demographic shift marked by declining fertility rates and increased longevity. The outmigration of younger, economically active individuals has further reshaped the population. By 2030, Kerala is projected to have 35 persons aged over 60 for every 100 working-age adults.</p>
-      <p>Already, <strong>16.5%</strong> of Kerala's population consists of senior citizens - the highest proportion in India. Increased longevity reflects social progress, but it demands robust systems to address the medical, social, and emotional needs of an ageing population.</p>
-
-      <h4 class="sub">Burden of chronic illness</h4>
-      <p>According to the National Sample Survey, <strong>54%</strong> of elderly individuals in Kerala live with one or more chronic diseases - diabetes, hypertension, cancer, respiratory disorders, renal disease, cerebrovascular and neurological illnesses. These conditions are rarely curative. They involve prolonged decline, increasing dependence, persistent symptoms, and psychological distress.</p>
-
-      <h4 class="sub">Economic strain</h4>
-      <p>National estimates indicate that nearly <strong>55 million Indians</strong> have been pushed below the poverty line due to healthcare expenses. In 2022–23, Kerala recorded the highest proportion of households spending over 25% of total household expenditure on health.</p>
-      <p>According to National Health Accounts, <strong>68%</strong> of total health expenditure in Kerala is out-of-pocket - the highest in India.</p>
-
-      <h4 class="sub">Isolation &amp; caregiver distress</h4>
-      <p>Migration-driven family structures have produced widespread social isolation among the elderly. Many older adults live alone or with equally aged spouses. Caregivers - most often elderly spouses or women family members - bear the brunt of care responsibilities, leading to burnout and financial hardship.</p>
+    <h2 class="section-title" style="font-size:26pt;">A model state, <em>and a new burden.</em></h2>
+    <p class="lede" style="font-size:11pt; margin-top:6pt;">Kerala is widely recognised as a model state for its social development - high literacy, long life expectancy, and a strong public health system. Those very successes have created new and complex challenges.</p>
+    <div class="cols-2" style="font-size:8.5pt; line-height:1.4; column-gap:9mm; margin-top:8pt;">
+      <h4 class="sub" style="font-size:9.5pt; margin-top:0;">Demographic transition</h4>
+      <p>Kerala faces a rapid demographic shift - declining fertility, rising longevity, and outmigration of younger adults. By 2030, it is projected to have 35 persons aged over 60 for every 100 working-age adults. Already, <strong>16.5%</strong> of the population are senior citizens, the highest share in India.</p>
+      <h4 class="sub" style="font-size:9.5pt;">Burden of chronic illness</h4>
+      <p>Per the National Sample Survey, <strong>54%</strong> of elderly individuals in Kerala live with one or more chronic diseases - rarely curative conditions involving prolonged decline, dependence, persistent symptoms, and psychological distress.</p>
+      <h4 class="sub" style="font-size:9.5pt;">Economic strain</h4>
+      <p>Nearly <strong>55 million Indians</strong> have been pushed below the poverty line by healthcare costs. In 2022-23, Kerala had the highest share of households spending over 25% of expenditure on health, and <strong>68%</strong> of health spending is out-of-pocket - the highest in India.</p>
+      <h4 class="sub" style="font-size:9.5pt;">Isolation &amp; caregiver distress</h4>
+      <p>Migration-driven family structures have produced widespread isolation among the elderly. Caregivers - often elderly spouses or women - bear the brunt of care, leading to burnout and financial hardship.</p>
     </div>
+    <div class="infographic-full" style="margin-top:8pt;">
+      <img src="images/final/f02.png" alt="Kerala demographic transition infographic" />
+    </div>
+    <p class="chart-caption" style="text-align:center; margin-top:5pt; font-size:8.5pt;">Projected dependency ratio and senior population share for Kerala.</p>
   </div>
   <div class="folio"><span>Why Palliative Care Matters</span><span class="num">12</span></div>
 </section>
 
 <!-- ============================================================
-     KERALA CONTEXT - chart: demographic transition (image5)
+     KERALA CONTEXT - charts: unmet need + limitations (merged)
 ============================================================ -->
 <section class="page page--chart">
   <div class="page-inner">
-    <p class="eyebrow">Demographic transition</p>
-    <h3 class="kicker" style="margin-top:0;">Kerala's ageing curve, visualised.</h3>
-    <div class="chart-frame">
-      <img src="images/image5.png" alt="Kerala demographic transition infographic" />
+    <p class="eyebrow">The unmet need &middot; Kerala's limitations</p>
+    <h3 class="kicker" style="margin-top:0;">Only 0.7% receive care - and current services fall short.</h3>
+    <div class="chart-pair">
+      <div class="cell">
+        <img src="images/final/f04.png" alt="Kerala palliative care coverage infographic" />
+        <p class="chart-caption">Of Ernakulam's 34 lakh residents, only 0.7% currently receive palliative care; reaching just 5% would mean 1,38,000 more.</p>
+      </div>
+      <div class="cell">
+        <img src="images/final/f03.png" alt="Kerala palliative care limitations infographic" />
+        <p class="chart-caption">Most services - government and non-government - operate only during 10am-4pm working hours.</p>
+      </div>
     </div>
-    <p class="chart-caption">Source diagram from the Arike Annual Report dossier - projected dependency ratio and senior population share.</p>
   </div>
-  <div class="folio"><span>Demographic Transition</span><span class="num">12a</span></div>
-</section>
-
-<!-- ============================================================
-     KERALA CONTEXT - chart: unmet need (image15) full-width
-============================================================ -->
-<section class="page page--chart">
-  <div class="page-inner">
-    <p class="eyebrow">The unmet need</p>
-    <h3 class="kicker" style="margin-top:0;">Of Ernakulam's 34 lakh residents, only 0.7% currently receive palliative care.</h3>
-    <div class="chart-frame">
-      <img src="images/image15.png" alt="Kerala palliative care coverage infographic" />
-    </div>
-    <p class="chart-caption">Even a modest target of 5% would require extending care to an additional 1,38,000 individuals.</p>
-  </div>
-  <div class="folio"><span>The Unmet Need</span><span class="num">13</span></div>
-</section>
-
-<!-- ============================================================
-     KERALA CONTEXT - chart: limitations (image32)
-============================================================ -->
-<section class="page page--chart">
-  <div class="page-inner">
-    <p class="eyebrow">Kerala's legacy - and its limitations</p>
-    <h3 class="kicker" style="margin-top:0;">Where current palliative services fall short.</h3>
-    <div class="chart-frame">
-      <img src="images/image32.png" alt="Kerala palliative care limitations infographic" />
-    </div>
-    <p class="chart-caption">Most palliative care services - government and non-government - operate only during 10am–4pm working hours.</p>
-  </div>
-  <div class="folio"><span>Kerala's Limitations</span><span class="num">13a</span></div>
+  <div class="folio"><span>The Unmet Need &amp; Limitations</span><span class="num">13</span></div>
 </section>
 
 <!-- ============================================================
@@ -361,7 +353,7 @@
     <h3 class="kicker">The predicament in Ernakulam</h3>
     <div class="grid-2">
       <ul class="clean">
-        <li>Palliative services are largely unavailable outside regular working hours (typically 10 am – 4 pm).</li>
+        <li>Palliative services are largely unavailable outside regular working hours (typically 10 am - 4 pm).</li>
         <li>Patients are often forced to seek expensive hospital care for manageable emergencies.</li>
         <li>Scarcity of trained palliative care professionals across disciplines.</li>
         <li>Limited access to specialist palliative care expertise.</li>
@@ -419,33 +411,24 @@
 </section>
 
 <!-- ============================================================
-     ARIKE MODEL - chart full-width (image39)
+     ARIKE MODEL - charts: community model + ownership (merged)
 ============================================================ -->
 <section class="page page--chart">
   <div class="page-inner">
-    <p class="eyebrow">A shared responsibility</p>
+    <p class="eyebrow">A shared responsibility &middot; community ownership</p>
     <h3 class="kicker" style="margin-top:0;">Care as a community act.</h3>
-    <div class="chart-frame">
-      <img src="images/image39.png" alt="Arike community palliative model infographic" />
+    <div class="chart-pair">
+      <div class="cell">
+        <img src="images/final/f11.png" alt="Arike community palliative model infographic" />
+        <p class="chart-caption">Patients, families, volunteers and the multidisciplinary care team, woven together.</p>
+      </div>
+      <div class="cell">
+        <img src="images/final/f12.png" alt="Community participation in Arike's model" />
+        <p class="chart-caption">Active support from residential associations under EDRAAC and CREDAI, alongside trained community volunteers.</p>
+      </div>
     </div>
-    <p class="chart-caption">Arike's neighbourhood network - patients, families, volunteers and the multidisciplinary care team, woven together.</p>
   </div>
   <div class="folio"><span>The Arike Model</span><span class="num">17</span></div>
-</section>
-
-<!-- ============================================================
-     ARIKE MODEL - chart full-width (image8)
-============================================================ -->
-<section class="page page--chart">
-  <div class="page-inner">
-    <p class="eyebrow">Community ownership</p>
-    <h3 class="kicker" style="margin-top:0;">A shared social responsibility.</h3>
-    <div class="chart-frame">
-      <img src="images/image8.png" alt="Community participation in Arike's model" />
-    </div>
-    <p class="chart-caption">Active support from residential associations under EDRAAC and CREDAI, alongside trained community volunteers.</p>
-  </div>
-  <div class="folio"><span>Community Ownership</span><span class="num">17a</span></div>
 </section>
 
 <!-- ============================================================
@@ -526,7 +509,7 @@
       </div>
     </div>
   </div>
-  <div class="folio"><span>Milestones 2019–2025</span><span class="num">20</span></div>
+  <div class="folio"><span>Milestones 2019-2025</span><span class="num">20</span></div>
 </section>
 
 <!-- ============================================================
@@ -555,24 +538,66 @@
       <div class="stat" style="border-color: rgba(255,255,255,0.3);"><span class="num" style="color: var(--saffron);">114</span><span class="label" style="color: rgba(255,255,255,0.7);">Awareness sessions conducted</span></div>
       <div class="stat" style="border-color: rgba(255,255,255,0.3);"><span class="num" style="color: var(--saffron);">69,127</span><span class="label" style="color: rgba(255,255,255,0.7);">Kilometres covered (km)</span></div>
     </div>
-    <p style="color: rgba(255,255,255,0.6); margin-top: 18pt; font-size: 9pt; letter-spacing: 0.06em;">All figures cover the reporting period January–December 2025, Ernakulam district.</p>
+    <p style="color: rgba(255,255,255,0.6); margin-top: 18pt; font-size: 9pt; letter-spacing: 0.06em;">All figures cover the reporting period January-December 2025, Ernakulam district.</p>
   </div>
   <div class="folio"><span style="color: rgba(255,255,255,0.6);">2025 at a Glance</span><span class="num">22</span></div>
 </section>
 
 <!-- ============================================================
-     2025 AT A GLANCE - chart full-width (image23)
+     IMPACT - Activity statistics + Notable impacts (merged 23 + 23a)
 ============================================================ -->
-<section class="page page--chart page--cream">
-  <div class="page-inner">
-    <p class="eyebrow">Comprehensive activity statistics</p>
-    <h3 class="kicker" style="margin-top:0;">From 98 services in 2019 to 24,295 in 2024–25.</h3>
-    <div class="chart-frame">
-      <img src="images/image23.png" alt="Arike activity statistics 2019 to 2025" />
+<section class="page page--cream">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
+    <p class="eyebrow">III · Impact</p>
+    <h2 class="section-title" style="font-size:26pt;">Notable impacts - <em>reducing the hospitalisation burden.</em></h2>
+    <p class="lede" style="font-size:11.5pt; margin-top:6pt;">In 2025, Arike received a total income of <strong>&#8377;2.52 crore</strong> - enabling community-based palliative care for <strong>244 terminally ill patients</strong>, allowing them to remain in the comfort and dignity of their homes while reducing avoidable hospital admissions. Of this, &#8377;15.18 lakh came through one-time donations and &#8377;4.51 lakh through recurring online giving.</p>
+    <div class="stat-row" style="margin-top:12pt;">
+      <div class="stat"><span class="num">&#8377;2.52 Cr</span><span class="label">Total income, 2025</span></div>
+      <div class="stat"><span class="num">&#8377;1.92 Cr</span><span class="label">CSR support</span></div>
+      <div class="stat"><span class="num">&#8377;40.55 L</span><span class="label">Beneficiary contributions</span></div>
+      <div class="stat"><span class="num">244</span><span class="label">Terminally ill patients at home</span></div>
     </div>
-    <p class="chart-caption">A sustained upward trajectory - reflecting service capacity, multidisciplinary interventions, and community trust.</p>
+    <p style="font-size:9pt; margin-top:10pt; color:var(--muted);">From 98 services in 2019 to 24,295 in 2024-25 - a sustained upward trajectory reflecting service capacity, multidisciplinary interventions, and community trust.</p>
+    <div class="chart-fit" style="margin-top:4pt;">
+      <img src="images/final/f15.png" alt="Arike activity statistics 2019 to 2025" />
+    </div>
   </div>
-  <div class="folio"><span>Activity Statistics</span><span class="num">23</span></div>
+  <div class="folio"><span>Notable Impacts</span><span class="num">23</span></div>
+</section>
+
+<!-- ============================================================
+     IMPACT - Economic impact + scalable model + hidden value (merged 23b + 23c + 23d)
+============================================================ -->
+<section class="page">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
+    <p class="eyebrow">A scalable model for compassionate end-of-life care</p>
+    <h2 class="section-title" style="font-size:24pt;">What it would take to <em>cover a district.</em></h2>
+    <div class="grid-2" style="gap:9mm; margin-top:6pt; align-items:start;">
+      <div style="font-size:9pt; line-height:1.42;">
+        <p style="margin-top:0;">With &#8377;2.52 crore, Arike delivered comprehensive home-based palliative care. Around <strong>25 Arike-like units</strong> (&#8776;<strong>&#8377;62 crore</strong> a year) would cover the entire district of Ernakulam - a highly cost-effective alternative to prolonged hospitalisation and ICU care. In 2025 alone, an estimated <strong>&#8377;11.34 crore</strong> in direct healthcare costs was avoided.</p>
+      </div>
+      <div style="font-size:9pt; line-height:1.42;">
+        <h4 class="sub" style="margin-top:0; font-size:9.5pt;">The hidden value of home care</h4>
+        <p style="margin-top:0;">Beyond direct savings, families avoid travel, food and lodging during admissions, lost caregiver income, and long-term debt - so the true benefit is far greater than the estimate alone.</p>
+      </div>
+    </div>
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr); margin-top:8pt;">
+      <div class="stat"><span class="num">~25</span><span class="label">Units to cover Ernakulam</span></div>
+      <div class="stat"><span class="num">&#8377;62 Cr</span><span class="label">Estimated annual funding</span></div>
+      <div class="stat"><span class="num">&#8377;11.34 Cr</span><span class="label">Healthcare costs avoided</span></div>
+    </div>
+    <div class="chart-pair row" style="margin-top:8pt;">
+      <div class="cell">
+        <img src="images/final/f07.png" alt="Estimated economic impact of Arike's home-based palliative care 2025" />
+        <p class="chart-caption">244 patients &times; 10 days avoided &times; &#8377;46,500/day = &#8377;11.34 crore avoided.</p>
+      </div>
+      <div class="cell">
+        <img src="images/final/f08.png" alt="Hidden costs of hospitalisation avoided through home-based care" />
+        <p class="chart-caption">The savings families never see on a bill.</p>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Estimated Economic Impact</span><span class="num">23</span></div>
 </section>
 
 <!-- ============================================================
@@ -603,17 +628,17 @@
       </div>
     </div>
     <figure style="margin-top: 14pt; height: 90mm;" class="photo-frame">
-      <img src="images/web-doctor.jpg" alt="Doctor examining an elderly patient with a stethoscope at a Kerala medical camp" />
+      <img src="images/final/f48.jpeg" alt="Home-based palliative care visit to a patient" />
     </figure>
   </div>
   <div class="folio"><span>Doctor's Home Care</span><span class="num">24</span></div>
 </section>
 
 <!-- ============================================================
-     NURSING HOME CARE
+     NURSING HOME CARE (merged 25 + 25a)
 ============================================================ -->
 <section class="page page--cream">
-  <div class="page-inner">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
     <p class="eyebrow">III · Impact</p>
     <h2 class="section-title">Nursing <em>home care.</em></h2>
     <p class="lede">Nursing care is the operational core of Arike's clinical services - ensuring continuity, daily monitoring, and hands-on clinical support for patients living with serious health-related suffering.</p>
@@ -631,30 +656,15 @@
         <li>Support for bed-bound and highly dependent patients</li>
       </ul>
     </div>
-    <div class="stat" style="margin-top: 22pt;">
+    <div class="stat" style="margin-top: 14pt;">
       <span class="num">10,841</span>
       <span class="label">Nursing home visits in 2025</span>
     </div>
-    <div class="pullquote" style="margin-top: 22pt;">
-      Continuity, daily monitoring, hands-on support - the quiet work that keeps a patient at home.
+    <div class="chart-fit" style="margin-top:8pt;">
+      <img src="images/final/f17.png" alt="Nursing home care infographic" />
     </div>
   </div>
   <div class="folio"><span>Nursing Home Care</span><span class="num">25</span></div>
-</section>
-
-<!-- ============================================================
-     NURSING - chart full-width (image18)
-============================================================ -->
-<section class="page page--chart">
-  <div class="page-inner">
-    <p class="eyebrow">Nursing care · in focus</p>
-    <h3 class="kicker" style="margin-top:0;">The operational core of clinical services.</h3>
-    <div class="chart-frame">
-      <img src="images/image18.png" alt="Nursing home care infographic" />
-    </div>
-    <p class="chart-caption">10,841 nursing home visits across 2025 - wound care, catheter and stoma support, vitals monitoring, pressure-sore prevention.</p>
-  </div>
-  <div class="folio"><span>Nursing · In Focus</span><span class="num">25a</span></div>
 </section>
 
 <!-- ============================================================
@@ -682,7 +692,7 @@
         </div>
       </div>
       <figure class="photo-frame" style="height: 130mm;">
-        <img src="images/web-physio.jpg" alt="Traditional Kerala kizhi therapy - hands-on functional treatment" />
+        <img src="images/final/f47.jpeg" alt="Arike multidisciplinary care team engagement" />
       </figure>
     </div>
   </div>
@@ -725,10 +735,10 @@
 </section>
 
 <!-- ============================================================
-     NIGHT CARE & EMERGENCY
+     NIGHT CARE & EMERGENCY (merged 28 + 28a)
 ============================================================ -->
 <section class="page">
-  <div class="page-inner">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
     <p class="eyebrow">III · Impact</p>
     <h2 class="section-title">Night care &amp; <em>emergency visits.</em></h2>
     <p class="lede">For patients with serious health-related suffering, the absence of after-hours support can lead to panic, unmanaged symptoms, and avoidable hospital admissions.</p>
@@ -744,27 +754,15 @@
         <li>Continuous monitoring and compassionate end-of-life support at home</li>
       </ul>
     </div>
-    <div class="stat" style="margin-top: 22pt;">
+    <div class="stat" style="margin-top: 14pt;">
       <span class="num">2,079</span>
       <span class="label">Night care &amp; emergency interventions in 2025</span>
     </div>
+    <div class="chart-fit" style="margin-top:8pt;">
+      <img src="images/final/f18.png" alt="Night care and emergency interventions infographic" />
+    </div>
   </div>
   <div class="folio"><span>Night Care &amp; Emergency</span><span class="num">28</span></div>
-</section>
-
-<!-- ============================================================
-     NIGHT CARE - chart full-width (image22)
-============================================================ -->
-<section class="page page--chart">
-  <div class="page-inner">
-    <p class="eyebrow">Night care · in focus</p>
-    <h3 class="kicker" style="margin-top:0;">The hours when most systems go quiet - ours don't.</h3>
-    <div class="chart-frame">
-      <img src="images/image22.png" alt="Night care and emergency interventions infographic" />
-    </div>
-    <p class="chart-caption">2,079 night care &amp; emergency interventions in 2025 - coordinated through the control room with on-call doctors and nursing staff.</p>
-  </div>
-  <div class="folio"><span>Night Care · In Focus</span><span class="num">28a</span></div>
 </section>
 
 <!-- ============================================================
@@ -842,63 +840,48 @@
       </tbody>
     </table>
     <div class="grid-2" style="margin-top: 14pt; gap: 6mm;">
-      <figure class="photo-frame" style="height: 60mm;"><img src="images/image6.jpg" alt="Food kit distribution"/><figcaption>Moments from food kit distribution</figcaption></figure>
-      <figure class="photo-frame" style="height: 60mm;"><img src="images/image13.jpg" alt="Nalla Padam school kit"/><figcaption>Nalla Padam 2.0 - school kit distribution</figcaption></figure>
+      <figure class="photo-frame" style="height: 60mm;"><img src="images/final/f21.jpeg" alt="Food kit distribution"/><figcaption>Moments from food kit distribution</figcaption></figure>
+      <figure class="photo-frame" style="height: 60mm;"><img src="images/final/f22.jpeg" alt="Nalla Padam school kit"/><figcaption>Nalla Padam 2.0 - school kit distribution</figcaption></figure>
     </div>
   </div>
   <div class="folio"><span>Social Work Summary</span><span class="num">30</span></div>
 </section>
 
 <!-- ============================================================
-     NALLA PADAM + VOLUNTEERS
+     NALLA PADAM + VOLUNTEERS (merged 31 + 31a)
 ============================================================ -->
 <section class="page">
-  <div class="page-inner">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
     <p class="eyebrow">A note on the smallest readers</p>
     <h2 class="section-title">'Nalla Padam 2.0' - <em>school kits</em> for children of palliative families.</h2>
-    <div class="grid-2">
+    <div class="grid-2" style="gap:9mm; align-items:start; font-size:9pt; line-height:1.42; margin-top:4pt;">
       <div>
-        <p class="lede">Recognising that illness in the family often disrupts a child's education, Nalla Padam provides essential school kits - bags, notebooks, and basic learning materials - to children from families receiving palliative care services.</p>
-        <p>By reducing the financial burden on families already facing medical and economic challenges, the initiative helps children continue their education with dignity and confidence. Beyond material support, it serves as an emotional reminder that their dreams matter - even in difficult circumstances.</p>
-        <h4 class="sub">Community volunteer engagement</h4>
-        <p>In 2025, <strong>109 active community volunteers</strong> were engaged, with social workers mobilising, training, and coordinating their efforts. By systematically linking patients with trained volunteers, Arike strengthened community-based support systems and significantly reduced isolation among patients and families.</p>
-        <ul class="clean">
+        <p class="lede" style="font-size:10.5pt; margin-top:0;">Recognising that illness in the family often disrupts a child's education, Nalla Padam provides essential school kits - bags, notebooks, and basic learning materials - to children from families receiving palliative care services.</p>
+        <p>By reducing the financial burden on families already facing medical and economic challenges, the initiative helps children continue their education with dignity, and serves as an emotional reminder that their dreams matter, even in difficult circumstances.</p>
+      </div>
+      <div>
+        <h4 class="sub" style="margin-top:0; font-size:9.5pt;">Community volunteer engagement</h4>
+        <p>In 2025, <strong>109 active community volunteers</strong> were engaged, with social workers mobilising, training, and coordinating their efforts - strengthening community-based support systems and significantly reducing isolation among patients and families.</p>
+        <ul class="clean" style="margin-top:4pt;">
           <li>Emotional support and active listening</li>
           <li>Assistance with daily practical needs</li>
           <li>A bridge between families and the healthcare team</li>
-          <li>Support for home-based care delivery</li>
           <li>Greater community participation and ownership</li>
         </ul>
       </div>
-      <div class="flex-col" style="gap: 6mm;">
-        <figure class="photo-frame" style="height: 100mm;"><img src="images/image13.jpg" alt="Nalla Padam school kit"/></figure>
-        <figure class="photo-frame" style="height: 100mm;"><img src="images/image6.jpg" alt="Volunteers and food kit"/></figure>
-      </div>
+    </div>
+    <div class="infographic-full" style="margin-top:8pt;">
+      <img src="images/final/f23.png" alt="Nalla Padam infographic" />
     </div>
   </div>
   <div class="folio"><span>Nalla Padam · Volunteers</span><span class="num">31</span></div>
 </section>
 
 <!-- ============================================================
-     NALLA PADAM - chart full-width (image25)
-============================================================ -->
-<section class="page page--chart">
-  <div class="page-inner">
-    <p class="eyebrow">Nalla Padam 2.0 · in focus</p>
-    <h3 class="kicker" style="margin-top:0;">Supporting children of palliative families with school kits.</h3>
-    <div class="chart-frame">
-      <img src="images/image25.png" alt="Nalla Padam infographic" />
-    </div>
-    <p class="chart-caption">A quiet reminder that a child's dreams matter, even in difficult circumstances.</p>
-  </div>
-  <div class="folio"><span>Nalla Padam · In Focus</span><span class="num">31a</span></div>
-</section>
-
-<!-- ============================================================
      WHEELS ON WHEELS - full bleed photo page
 ============================================================ -->
 <section class="page photo-page">
-  <img class="bleed" src="images/image35.jpg" alt="Wheels on Wheels accessible vehicle" />
+  <img class="bleed" src="images/final/f24.jpeg" alt="Wheels on Wheels accessible vehicle" />
   <div class="caption-strip">
     <p class="eyebrow">Wheels on Wheels</p>
     <h2>Mobility, dignity, and a way back to ordinary days.</h2>
@@ -977,10 +960,10 @@
         </tbody>
       </table>
       <div class="grid-2" style="gap: 4mm; grid-auto-rows: 1fr;">
-        <figure class="photo-frame"><img src="images/image3.jpg" alt="Awareness session"/></figure>
-        <figure class="photo-frame"><img src="images/image42.jpg" alt="Awareness session"/></figure>
-        <figure class="photo-frame"><img src="images/image26.jpg" alt="Awareness session"/></figure>
-        <figure class="photo-frame"><img src="images/image20.jpg" alt="Awareness session"/></figure>
+        <figure class="photo-frame"><img src="images/final/f25.jpeg" alt="Awareness session"/></figure>
+        <figure class="photo-frame"><img src="images/final/f26.jpeg" alt="Awareness session"/></figure>
+        <figure class="photo-frame"><img src="images/final/f27.jpeg" alt="Awareness session"/></figure>
+        <figure class="photo-frame"><img src="images/final/f28.jpeg" alt="Awareness session"/></figure>
       </div>
     </div>
   </div>
@@ -996,8 +979,8 @@
     <h2 class="section-title">'Janm' - <em>birthday joy</em> for patients.</h2>
     <p class="lede">A heartfelt joint initiative of ESIP (Ernakulam Students Initiatives in Palliative Care) and Arike. Students visit patients in their homes to celebrate their birthdays - offering more than a cake: companionship, emotional support, and a sense of belonging to those often isolated by illness.</p>
     <div class="grid-2" style="gap: 6mm; margin-top: 10pt;">
-      <figure class="photo-frame" style="height: 130mm;"><img src="images/image10.jpg" alt="Janm celebration"/></figure>
-      <figure class="photo-frame" style="height: 130mm;"><img src="images/image14.jpg" alt="Janm celebration"/></figure>
+      <figure class="photo-frame" style="height: 130mm;"><img src="images/final/f33.jpeg" alt="Janm celebration"/></figure>
+      <figure class="photo-frame" style="height: 130mm;"><img src="images/final/f34.jpeg" alt="Janm celebration"/></figure>
     </div>
     <p style="margin-top: 10pt; text-align:center; font-style: italic; font-family: var(--serif); color: var(--terracotta);">Glimpses from Janm birthday celebrations.</p>
   </div>
@@ -1015,24 +998,24 @@
       <div>
         <h4 class="sub">Tata Povam - palliative care day trip</h4>
         <p>Through the collaborative efforts of student volunteers from Rajagiri College of Applied Science &amp; Management and ESIP, a one-day trip named 'Tata Povam' was organised to Vallarpadam Church and Puthuvypu Beach for a sunset viewing - fulfilling a long-cherished wish of patients.</p>
-        <figure class="photo-frame" style="height: 80mm; margin-top: 8pt;"><img src="images/image41.jpg" alt="Tata Povam day trip"/></figure>
+        <figure class="photo-frame" style="height: 58mm; margin-top: 8pt;"><img src="images/final/f35.jpeg" alt="Tata Povam day trip"/></figure>
       </div>
       <div>
         <h4 class="sub">Snehavarnangal - Onam celebration</h4>
         <p>An Onam celebration at Rajagiri Centre for Business Studies, in collaboration with Arike, brought together patients, families, and volunteers for a day of renewed joy and community belonging - pookkalam making, games, cultural performances by BUDS School children, and a traditional Onam sadya where students and patients dined as one family.</p>
-        <figure class="photo-frame" style="height: 80mm; margin-top: 8pt;"><img src="images/image2.jpg" alt="Snehavarnangal Onam"/></figure>
+        <figure class="photo-frame" style="height: 58mm; margin-top: 8pt;"><img src="images/final/f37.jpeg" alt="Snehavarnangal Onam"/></figure>
       </div>
     </div>
     <div class="grid-2" style="gap: 6mm; margin-top: 10pt;">
       <div>
         <h4 class="sub">Thanalonam 2025</h4>
         <p>On 13th September, the Freedom on Wheels Paraplegia Society - in collaboration with Thanal Palliative Care and Arike - organised ThanalOnam 2025, an Onam celebration for people with paraplegia, fostering joy, inclusion, and togetherness.</p>
-        <figure class="photo-frame" style="height: 60mm; margin-top: 6pt;"><img src="images/image43.jpg" alt="Thanalonam"/></figure>
+        <figure class="photo-frame" style="height: 48mm; margin-top: 6pt;"><img src="images/final/f38.jpeg" alt="Thanalonam"/></figure>
       </div>
       <div>
         <h4 class="sub">Kuttikootam by MIND Trust</h4>
         <p>Arike participated in Kuttikootam, organised by the Mobility in Dystrophy (MIND) Trust on 28 May 2025 - joining a wider movement for inclusion of children with neuromuscular disabilities.</p>
-        <figure class="photo-frame" style="height: 60mm; margin-top: 6pt;"><img src="images/image1.jpg" alt="Kuttikootam by MIND"/></figure>
+        <figure class="photo-frame" style="height: 48mm; margin-top: 6pt;"><img src="images/final/f36.jpeg" alt="Kuttikootam by MIND"/></figure>
       </div>
     </div>
   </div>
@@ -1047,7 +1030,7 @@
     <p class="eyebrow">UNARV · 2025</p>
     <h3 class="kicker" style="margin-top:0;">Igniting the next generation of caregivers.</h3>
     <div class="chart-frame">
-      <img src="images/image36.png" alt="UNARV three-day immersion workshop infographic" />
+      <img src="images/final/f29.png" alt="UNARV three-day immersion workshop infographic" />
     </div>
     <p class="chart-caption">A structural mobilisation of youth - Day 1 foundation, Day 2 field-based home-care visits, Day 3 reflective feedback.</p>
   </div>
@@ -1100,9 +1083,9 @@
     <p class="eyebrow">UNARV - in the field</p>
     <h3 class="kicker" style="margin-top:0;">Workshops at Union Christian College, SCMS, and De Paul.</h3>
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 10pt;">
-      <figure class="photo-frame" style="height: 100mm;"><img src="images/image40.jpg" alt="UNARV at UC College Aluva"/><figcaption>UNARV · Union Christian College (Autonomous), Aluva</figcaption></figure>
-      <figure class="photo-frame" style="height: 100mm;"><img src="images/image24.jpg" alt="UNARV at SCMS Kalamasserry"/><figcaption>UNARV · SCMS College, Kalamasserry</figcaption></figure>
-      <figure class="photo-frame" style="grid-column: span 2; height: 100mm;"><img src="images/image34.jpg" alt="UNARV at De Paul Angamaly"/><figcaption>UNARV · De Paul Institute of Science and Technology, Angamaly</figcaption></figure>
+      <figure class="photo-frame" style="height: 100mm;"><img src="images/final/f30.jpeg" alt="UNARV at UC College Aluva"/><figcaption>UNARV · Union Christian College (Autonomous), Aluva</figcaption></figure>
+      <figure class="photo-frame" style="height: 100mm;"><img src="images/final/f31.jpeg" alt="UNARV at SCMS Kalamasserry"/><figcaption>UNARV · SCMS College, Kalamasserry</figcaption></figure>
+      <figure class="photo-frame" style="grid-column: span 2; height: 100mm;"><img src="images/final/f32.jpeg" alt="UNARV at De Paul Angamaly"/><figcaption>UNARV · De Paul Institute of Science and Technology, Angamaly</figcaption></figure>
     </div>
   </div>
   <div class="folio"><span>UNARV · Field</span><span class="num">40</span></div>
@@ -1119,12 +1102,12 @@
       <div>
         <h4 class="sub">Chitrolsavam</h4>
         <p>Arike hosted 'Chitrolsavam' at Don Bosco School, where home-bound patients enjoyed a special film screening and a day of refreshing companionship. Supported by student volunteers, the event allowed elderly participants to rediscover the joy of cinema and share nostalgic memories outside their usual routines.</p>
-        <figure class="photo-frame" style="height: 90mm; margin-top: 8pt;"><img src="images/image11.jpg" alt="Chitrolsavam film screening"/><figcaption>Chitrolsavam - film screening for home-bound patients</figcaption></figure>
+        <figure class="photo-frame" style="height: 90mm; margin-top: 8pt;"><img src="images/final/f39.jpeg" alt="Chitrolsavam film screening"/><figcaption>Chitrolsavam - film screening for home-bound patients</figcaption></figure>
       </div>
       <div>
         <h4 class="sub">District NGO-CBO meet at Aluva</h4>
         <p>Arike received a memento in recognition of its activity during the Ernakulam district NGO-CBO meet held at Aluva in October 2025.</p>
-        <figure class="photo-frame" style="height: 90mm; margin-top: 8pt;"><img src="images/image33.jpg" alt="Felicitation at NGO-CBO meet"/><figcaption>Felicitation at Ernakulam district NGO-CBO meet</figcaption></figure>
+        <figure class="photo-frame" style="height: 90mm; margin-top: 8pt;"><img src="images/final/f40.jpeg" alt="Felicitation at NGO-CBO meet"/><figcaption>Felicitation at Ernakulam district NGO-CBO meet</figcaption></figure>
       </div>
     </div>
   </div>
@@ -1165,10 +1148,10 @@
     <p class="eyebrow">Training · in practice</p>
     <h3 class="kicker" style="margin-top:0;">CME, refreshers, ostomy care, volunteer workshops.</h3>
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 8pt;">
-      <figure class="photo-frame" style="height: 85mm;"><img src="images/image29.jpg" alt="Ostomy care training"/><figcaption>Specialised ostomy care training for nurses</figcaption></figure>
-      <figure class="photo-frame" style="height: 85mm;"><img src="images/image4.jpg" alt="CME at IMA Cochin"/><figcaption>Continuing Medical Education (CME) at IMA Cochin</figcaption></figure>
-      <figure class="photo-frame" style="height: 85mm;"><img src="images/image17.jpg" alt="Refresher training"/><figcaption>Refresher training programme for staff</figcaption></figure>
-      <figure class="photo-frame" style="height: 85mm;"><img src="images/image9.jpg" alt="Volunteers course"/><figcaption>Moments from the Volunteers Course in Palliative Care</figcaption></figure>
+      <figure class="photo-frame" style="height: 85mm;"><img src="images/final/f41.jpeg" alt="Ostomy care training"/><figcaption>Specialised ostomy care training for nurses</figcaption></figure>
+      <figure class="photo-frame" style="height: 85mm;"><img src="images/final/f42.jpeg" alt="CME at IMA Cochin"/><figcaption>Continuing Medical Education (CME) at IMA Cochin</figcaption></figure>
+      <figure class="photo-frame" style="height: 85mm;"><img src="images/final/f43.jpeg" alt="Refresher training"/><figcaption>Refresher training programme for staff</figcaption></figure>
+      <figure class="photo-frame" style="height: 85mm;"><img src="images/final/f45.jpeg" alt="Volunteers course"/><figcaption>Moments from the Volunteers Course in Palliative Care</figcaption></figure>
     </div>
     <div class="sidebar" style="margin-top: 12pt;">
       <h4 class="sub" style="margin-top:0;">Regional workshop on elderly and palliative care · Guwahati</h4>
@@ -1211,39 +1194,26 @@
 </section>
 
 <!-- ============================================================
-     INTERNSHIPS & EXPOSURE
+     INTERNSHIPS & EXPOSURE (merged 47 + 47a)
 ============================================================ -->
 <section class="page">
-  <div class="page-inner">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
     <p class="eyebrow">Learning &amp; exchange</p>
     <h2 class="section-title">Internships &amp; <em>exposure</em> in palliative care.</h2>
-    <p class="lede">In 2025, Arike provided intensive training and field exposure to <strong>50 social work students</strong> from institutions across India - and welcomed <strong>12 international nursing professionals</strong> for specialised palliative training.</p>
-    <p>Interns were immersed in a multidisciplinary environment - home-based interventions, community mobilisation, and advanced digital healthcare tools. By bridging academic theory with compassionate bedside practice, Arike is actively shaping a future workforce dedicated to dignity in healthcare. Twelve nursing professionals visited from across the world - highlighting Arike's emerging role as an international hub for clinical excellence.</p>
-    <div class="stat-row" style="grid-template-columns: 1fr 1fr; margin-top: 12pt;">
+    <p class="lede">In 2025, Arike provided intensive training and field exposure to <strong>50 social work students</strong> from institutions across India - and welcomed <strong>12 international nursing professionals</strong> for specialised palliative training, bridging academic theory with compassionate bedside practice.</p>
+    <div class="stat-row" style="grid-template-columns: 1fr 1fr; margin-top: 10pt;">
       <div class="stat"><span class="num">50</span><span class="label">Social work interns</span></div>
       <div class="stat"><span class="num">12</span><span class="label">International nursing professionals</span></div>
     </div>
-    <div class="grid-2" style="gap: 6mm; margin-top: 14pt;">
-      <figure class="photo-frame" style="height: 90mm;"><img src="images/image16.jpg" alt="Singapore visit"/><figcaption>Visit by the Palliative Care Accessibility programme team, Singapore International Foundation</figcaption></figure>
-      <figure class="photo-frame" style="height: 90mm;"><img src="images/image19.jpg" alt="UK nurse"/><figcaption>Nursing professional from the UK during home care</figcaption></figure>
+    <div class="grid-2" style="gap: 6mm; margin-top: 12pt;">
+      <figure class="photo-frame" style="height: 60mm;"><img src="images/final/f47.jpeg" alt="Singapore visit"/><figcaption>Palliative Care Accessibility programme team, Singapore International Foundation</figcaption></figure>
+      <figure class="photo-frame" style="height: 60mm;"><img src="images/final/f48.jpeg" alt="UK nurse"/><figcaption>Nursing professional from the UK during home care</figcaption></figure>
+    </div>
+    <div class="chart-fit" style="margin-top:10pt;">
+      <img src="images/final/f46.png" alt="Capacity building across doctors, nurses and community" />
     </div>
   </div>
   <div class="folio"><span>Internships &amp; Exposure</span><span class="num">47</span></div>
-</section>
-
-<!-- ============================================================
-     CAPACITY BUILDING - chart full-width (image38)
-============================================================ -->
-<section class="page page--chart page--cream">
-  <div class="page-inner">
-    <p class="eyebrow">Capacity building · in focus</p>
-    <h3 class="kicker" style="margin-top:0;">Fortifying the state's healthcare ecosystem.</h3>
-    <div class="chart-frame">
-      <img src="images/image38.png" alt="Capacity building across doctors, nurses and community" />
-    </div>
-    <p class="chart-caption">Foundation Course for doctors · CCCPN for nurses · VCPC for community volunteers - and a growing global reach.</p>
-  </div>
-  <div class="folio"><span>Capacity Building · In Focus</span><span class="num">47a</span></div>
 </section>
 
 <!-- ============================================================
@@ -1343,7 +1313,7 @@
         <p>Mobility aids - wheelchairs and walkers - enabled partial independence and eased caregiver burden. Respiratory support devices (oxygen concentrators, cylinders, suction, BiPAP) ensured critical care at home and reduced emergency hospital admissions.</p>
         <p>Hygiene materials - diapers and underpads - significantly improved dignity of care and reduced caregiver stress.</p>
         <figure class="photo-frame" style="height: 90mm; margin-top: 10pt;">
-          <img src="images/image30.jpg" alt="Assistive devices in home care"/>
+          <img src="images/final/f20.png" alt="Assistive devices in home care"/>
         </figure>
       </div>
     </div>
@@ -1377,7 +1347,7 @@
         <p><strong style="color: var(--terracotta);">Voxbay IVR.</strong> An Interactive Voice Response system has enhanced our scalability and accessibility - ensuring patients and families have immediate, reliable access to information and services.</p>
 
         <figure class="photo-frame" style="height: 95mm; margin-top: 12pt;">
-          <img src="images/image7.jpg" alt="Technology at Arike"/>
+          <img src="images/final/f49.jpeg" alt="Technology at Arike"/>
         </figure>
       </div>
     </div>
@@ -1470,7 +1440,7 @@
         </table>
       </div>
       <div>
-        <figure class="photo-frame" style="height: 120mm;"><img src="images/image12.jpg" alt="Sutherland scooter flag off"/><figcaption>Flag-off ceremony of scooters supported by Sutherland</figcaption></figure>
+        <figure class="photo-frame" style="height: 120mm;"><img src="images/final/f50.jpeg" alt="Sutherland scooter flag off"/><figcaption>Flag-off ceremony of scooters supported by Sutherland</figcaption></figure>
         <div class="pullquote" style="margin-top: 14pt; font-size: 16pt;">
           We are grateful to every CSR partner, individual donor, and well-wisher whose contribution made it possible to continue providing dignified and compassionate care.
         </div>
@@ -1478,6 +1448,57 @@
     </div>
   </div>
   <div class="folio"><span>CSR · Major Contributors</span><span class="num">56</span></div>
+</section>
+
+<!-- ============================================================
+     FINANCIAL OVERVIEW - income + expenditure (merged 57 + 57a)
+============================================================ -->
+<section class="page">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
+    <p class="eyebrow">VI · Stewardship</p>
+    <h2 class="section-title" style="font-size:24pt;">Organisational financial <em>overview - 2025.</em></h2>
+    <p class="lede" style="font-size:11pt; margin-top:6pt;">Arike recorded a total income of <strong>&#8377;2.52 crore</strong> and total expenditure of <strong>&#8377;2.46 crore</strong> during 2025 - the majority directly linked to patient care and service delivery.</p>
+    <div class="grid-2" style="gap: 9mm; margin-top: 10pt; align-items:start;">
+      <div>
+        <h4 class="sub" style="margin-top:0; font-size:10pt;">Income &middot; &#8377;2.52 Cr</h4>
+        <table class="report" style="font-size:8.5pt;">
+          <thead><tr><th>Income source</th><th>Amount (&#8377;)</th></tr></thead>
+          <tbody>
+            <tr><td>Home care services</td><td class="num">40,55,079</td></tr>
+            <tr><td>Micro &amp; random donations</td><td class="num">19,68,401</td></tr>
+            <tr><td>CSR contributions</td><td class="num">1,91,66,820</td></tr>
+            <tr class="total"><td>Total income</td><td class="num">2,51,90,300</td></tr>
+          </tbody>
+        </table>
+        <ul class="clean" style="font-size:8.5pt; margin-top:8pt;">
+          <li>CSR funding constituted nearly <strong>76%</strong> of total income.</li>
+          <li>Community micro-donations and online giving generated <strong>&#8377;19.68 lakh</strong> (offline &#8377;15.18 L + online &#8377;4.51 L).</li>
+          <li>Home care service revenue contributed over <strong>&#8377;40.55 lakh</strong>, supporting continuity of patient-centred services.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="sub" style="margin-top:0; font-size:10pt;">Expenditure &middot; &#8377;2.46 Cr</h4>
+        <table class="report" style="font-size:8.5pt;">
+          <thead><tr><th>Expense category</th><th>Amount (&#8377;)</th></tr></thead>
+          <tbody>
+            <tr><td>Salaries &amp; employee wages</td><td class="num">1,62,53,365</td></tr>
+            <tr><td>Programmes &amp; outreach</td><td class="num">22,56,024</td></tr>
+            <tr><td>Medical expenses</td><td class="num">13,83,088</td></tr>
+            <tr><td>Office expenses</td><td class="num">11,53,221</td></tr>
+            <tr><td>Logistics</td><td class="num">3,49,878</td></tr>
+            <tr><td>Procurement</td><td class="num">3,35,343</td></tr>
+            <tr><td>IT &amp; internet</td><td class="num">1,61,773</td></tr>
+            <tr><td>Consultant charges</td><td class="num">1,45,380</td></tr>
+            <tr><td>HR training</td><td class="num">54,274</td></tr>
+            <tr><td>Donation refund</td><td class="num">25,00,000</td></tr>
+            <tr class="total"><td>Total expenditure</td><td class="num">2,45,92,346</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:8.5pt; margin-top:8pt;">Nearly <strong>66%</strong> of expenditure went to the multidisciplinary team enabling 24/7 home care. Investments in logistics, IT, and communications strengthened continuity of care and financial sustainability.</p>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Financial Overview</span><span class="num">57</span></div>
 </section>
 
 <!-- ============================================================
@@ -1540,50 +1561,47 @@
 </section>
 
 <!-- ============================================================
-     FUTURE PLANS - body
+     FUTURE PLANS - body + NNH (merged 63 + 63a)
 ============================================================ -->
 <section class="page">
-  <div class="page-inner">
+  <div class="page-inner" style="display:flex; flex-direction:column;">
     <p class="eyebrow">Future plans · 2026 and beyond</p>
-    <h2 class="section-title">Four <em>frontiers.</em></h2>
-    <div class="grid-2" style="gap: 8mm;">
+    <h2 class="section-title" style="font-size:26pt;">Four <em>frontiers.</em></h2>
+    <div class="grid-2" style="gap: 8mm; font-size:8.4pt; line-height:1.4;">
       <div>
-        <h4 class="sub">I · The CRHC ecosystem - scaling the Arike model</h4>
-        <p>The <strong>Community Resource Centre in Healthcare (CRHC)</strong> will serve as the structural backbone of our expansion across India.</p>
+        <h4 class="sub" style="font-size:9.5pt;">I · The CRHC ecosystem - scaling the Arike model</h4>
+        <p style="margin-top:2pt;">The <strong>Community Resource Centre in Healthcare (CRHC)</strong> will serve as the structural backbone of our expansion across India.</p>
         <ul class="clean">
-          <li><strong>24/7 TeleHealth Control Centre</strong> - a high-tech nerve centre providing real-time clinical guidance, linking frontline workers to experts for symptom management, emergency triage, and seamless ambulance coordination.</li>
-          <li><strong>Community-based palliative hubs</strong> - identifying underserved regions in Ernakulam, then Kerala, and eventually across India. These hubs will act as "motherships" for local "spokes."</li>
+          <li><strong>24/7 TeleHealth Control Centre</strong> - real-time clinical guidance linking frontline workers to experts for symptom management, emergency triage, and ambulance coordination.</li>
+          <li><strong>Community-based palliative hubs</strong> - identifying underserved regions in Ernakulam, then Kerala, and eventually across India, acting as "motherships" for local "spokes."</li>
         </ul>
-
-        <h4 class="sub">II · Digital frontiers - AI &amp; the CARE grid</h4>
+        <h4 class="sub" style="font-size:9.5pt;">II · Digital frontiers - AI &amp; the CARE grid</h4>
         <ul class="clean">
-          <li><strong>State-wide palliative grid</strong> - integrating CARE software across multiple units to create a unified state palliative care grid.</li>
-          <li><strong>AI &amp; predictive analytics</strong> - moving from reactive to proactive care by analysing trends across registered cases.</li>
-          <li><strong>Care Scribe &amp; mobile integration</strong> - patient-facing apps for medication reminders, educational resources, and real-time symptom tracking.</li>
+          <li><strong>State-wide palliative grid</strong> - integrating CARE software into a unified state palliative care grid.</li>
+          <li><strong>AI &amp; predictive analytics</strong> - moving from reactive to proactive care across registered cases.</li>
+          <li><strong>Care Scribe &amp; mobile integration</strong> - patient apps for reminders, resources, and symptom tracking.</li>
         </ul>
       </div>
       <div>
-        <h4 class="sub">III · Knowledge leadership - training &amp; research</h4>
-        <p>Arike isn't just a service provider; we are a teaching institution.</p>
+        <h4 class="sub" style="font-size:9.5pt;">III · Knowledge leadership - training &amp; research</h4>
         <ul class="clean">
-          <li><strong>Arike Global Certifications</strong> - partnering with international accredited palliative care providers to offer professional certifications, setting a gold standard for nurses and social workers.</li>
-          <li><strong>Evidence-based advocacy</strong> - with six years of specialised clinical data, establishing a robust research mechanism to contribute to national policy advocacy and refine global palliative protocols.</li>
+          <li><strong>Arike Global Certifications</strong> - partnering with accredited international providers to certify nurses and social workers.</li>
+          <li><strong>Evidence-based advocacy</strong> - six years of clinical data feeding national policy advocacy and global protocols.</li>
         </ul>
-
-        <h4 class="sub">IV · The Healthcare Incubation Hub</h4>
-        <p>To ensure the sustainability of the palliative movement, we are launching an NGO Incubation Centre.</p>
+        <h4 class="sub" style="font-size:9.5pt;">IV · The Healthcare Incubation Hub</h4>
         <ul class="clean">
-          <li><strong>Technical structuring</strong> - assisting Residential Associations (with EDRAAC and CREDAI) and smaller NGOs to set up professional operational and financial systems.</li>
-          <li><strong>Financial self-sufficiency</strong> - guiding organisations toward revenue models that allow them to thrive without total dependency on erratic funding.</li>
-          <li><strong>Global scaling</strong> - extending consultancy services to international healthcare NGOs seeking to replicate the Arike model.</li>
+          <li><strong>Technical structuring</strong> - helping Residential Associations (EDRAAC, CREDAI) and smaller NGOs build operational and financial systems.</li>
+          <li><strong>Financial self-sufficiency</strong> - guiding organisations toward sustainable revenue models.</li>
+          <li><strong>Global scaling</strong> - consultancy for international NGOs replicating the Arike model.</li>
         </ul>
       </div>
     </div>
-    <figure class="photo-frame" style="height: 60mm; margin-top: 12pt;">
-      <img src="images/image27.jpg" alt="Looking forward"/>
-    </figure>
+    <div style="margin-top:10pt; border-top:0.5pt solid rgba(0,0,0,0.12); padding-top:8pt;">
+      <h4 class="sub" style="margin-top:0; font-size:10pt;">One Health · Neighbourhood Network for Health (NNH)</h4>
+      <p style="font-size:8.6pt; line-height:1.42; margin-top:3pt;">Arike is supporting the <strong>Neighbourhood Network for Health (NNH)</strong> - a community-based model rooted in the <strong>One Health</strong> approach that brings care closer to homes through families, neighbourhoods, professionals, and local institutions. It aims to promote health, prevent disease, reduce unnecessary hospitalisation, and ensure continuity of care - building a sustainable, people-centred ecosystem where no one is left behind.</p>
+    </div>
   </div>
-  <div class="folio"><span>Future Plans</span><span class="num">63</span></div>
+  <div class="folio"><span>Future Plans · NNH</span><span class="num">63</span></div>
 </section>
 
 <!-- ============================================================
@@ -1657,7 +1675,7 @@
         </table>
       </div>
       <figure class="photo-frame" style="height: 80mm;">
-        <img src="images/image37.png" alt="QR code for donation" style="object-fit: contain; background: white;" />
+        <img src="images/final/f52.png" alt="QR code for donation" style="object-fit: contain; background: white;" />
       </figure>
     </div>
 
@@ -1666,14 +1684,26 @@
     </div>
 
     <div style="margin-top: 30pt; text-align: center;">
-      <p style="font-family: var(--serif); font-size: 28pt; color: var(--terracotta); font-style: italic; letter-spacing: -0.01em; margin: 0;">Arike</p>
-      <p style="font-size: 9pt; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); margin-top: 4pt;">Palliative Home Care · An Initiative of IMA Cochin</p>
+      <img src="images/logo-arike.png" alt="Arike" style="height: 16mm; width: auto; display: inline-block;" />
+      <p style="font-size: 9pt; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); margin-top: 8pt;">Home Care &middot; An Initiative of IMA Cochin</p>
     </div>
   </div>
-  <div class="folio"><span>Donation &amp; Contact</span><span class="num">68</span></div>
 </section>
 
 <!-- INSERT-MARKER -->
+
+<script>
+(function () {
+  var btn = document.querySelector('.scroll-top');
+  if (!btn) return;
+  function toggle() {
+    if (window.scrollY > 300) btn.classList.add('is-visible');
+    else btn.classList.remove('is-visible');
+  }
+  window.addEventListener('scroll', toggle, { passive: true });
+  toggle();
+})();
+</script>
 
 </body>
 </html>
